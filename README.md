@@ -1,13 +1,9 @@
-ShareIT 
+ShareIt
 
-ShareIT is a platform for uploading your files and sharing easily.
+ShareIt is a platform for uploading your files and sharing easily.
 
 File size limit is 64 MB (You can change it from UploadController/Upload)
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/h7YA6Wi6OkQ" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
 
+[![Demo for ShareIt](https://img.youtube.com/vi/VIDEO-ID/0.jpg)](https://www.youtube.com/watch?v=h7YA6Wi6OkQ)
 https://www.youtube.com/watch?v=h7YA6Wi6OkQ
