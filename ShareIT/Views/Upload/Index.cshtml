@@ -1,0 +1,45 @@
+﻿
+@model ShareIT.Models.FileUploading
+@{
+    ViewData["Title"] = "Upload";
+}
+    <section class="banner-area relative about-banner" id="home" style="height:300px">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+                <div class="about-content col-lg-8">
+                    <h1 class="text-white">
+                        Dosya Yükleyici
+
+                    </h1>
+                    
+                    
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br />
+<div class="about-content"style="margin-top:-30px;margin-bottom:60px" >
+    <label>Maksimum yükleme boyutu 64MB: </label>
+    
+    <form method="post"  enctype="multipart/form-data" asp-controller="Upload" asp-for="postedFiles" asp-action="Upload">
+        <div class="container align-self-md-center" >
+
+            
+            
+
+            <input type="file"  name="postedFiles" class="genric-btn large primary" accept=".png,.zip,.jpg,.jpeg,.mp4,.3gp,.rar,.bmp,.avi,.txt,.mp3" />
+            
+            <input type="submit" class="genric-btn large primary" value="Yükle" />
+
+
+
+        </div>
+
+    </form>
+ 
+</div>
+<br /><br />

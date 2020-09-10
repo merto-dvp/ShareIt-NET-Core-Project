@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "UploadSuccessful";
+}
+
+
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Yükleme Başarılı
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="padding:3%;text-align:center">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label> Link Oluşturuldu:</label>
+        <input value="http://104.214.219.8/Download/@ViewBag.Message" class="form-control" style="text-align:center" />
+    </div>
+
+    <div class="container" style="align-content:center">
+
+
+
+
+        <a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="Download" asp-action="CreateLink" asp-route-id=@ViewBag.Message>İNDİR</a>
+
+        <br /><br /><br /><br />
+    </div>
+
+
+    <a asp-area="" asp-controller="Upload" class="primary-btn text-uppercase mx-auto" style="width:100%;text-align:center" asp-action="Index">Dosya Yükle</a>
+
+    <br /><br /><br /><br />
+</div>
+

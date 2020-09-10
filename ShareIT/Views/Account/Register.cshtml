@@ -1,0 +1,56 @@
+﻿@model RegisterModel
+@{
+    ViewData["Title"] = "Hesap Oluştur";
+}
+
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                   Kullanıcı Oluştur
+                </h1>
+                </div>
+        </div>
+    </div>
+</section>
+<div class="container" style="padding:2%;text-align:center">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+    
+    <br />
+    <h3>Servislere erişebilmek için hesap oluşturmanız gerekmektedir.</h3>
+    <br />
+    <h5> Zaten kayıtlımısınız? <a asp-action="Login" asp-controller="Account"> Giriş yapabilirsiniz.</a></h5>
+    <br />
+
+
+
+    <form asp-action="Register" method="post">
+
+        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+        <div class="form-group" style="text-align:center">
+            <label> Kullanıcı Adı</label>
+            <input style="text-align:center" asp-for="UserName" class="form-control" />
+        </div>
+
+
+        <div class="form-group" style="text-align:center">
+            <label>Şifre</label>
+            <input style="text-align:center" asp-for="Password" type="password" class="form-control" />
+        </div>
+
+
+        <br />
+
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+
+
+
+    </form>
+
+</div>
+

@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<IdentityUser>
+@{
+    ViewData["Title"] = "Index";
+}
+    <section class="banner-area relative about-banner" id="home" style="height:300px">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+                <div class="about-content col-lg-8">
+                    <h1 class="text-white">
+                        Kullanıcı Hesap Yönetimi
+
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="text-align:center">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <br /><br />
+        <table class="table table-bordered table-striped table-sm m-1 p-1">
+            <tr>
+                <th>Kullanıcı Id</th>
+                <th>Kullanıcı Adı</th>
+                <th>Mail Adresi</th>
+                <th></th>
+            </tr>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="4" class="text-center">
+                        Kullanıcı Yok
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+
+                        <td>
+                            <form asp-route-id="@user.Id" asp-action="Delete" method="post">
+                                <button type="submit" class="btn btn-danger">Sil</button>
+
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+
+
+        </table>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
+
+  
+

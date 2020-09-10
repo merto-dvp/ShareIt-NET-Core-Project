@@ -1,0 +1,54 @@
+﻿@model ShareIT.Models.UploadedFile
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Dosyanız Hazır
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="padding:3%;text-align:center">
+
+    <br />
+    <h3>Dosya Bilgileri</h3>
+    <br />
+    <div class="form-group">
+        <label> Link</label>
+        <input value="http://13.80.103.152/Download/@Model.id" class="form-control" style="text-align:center" />
+    </div>
+
+    ID: @Model.id
+    <br />
+    Dosya Adı:  @Model.fileName@Model.extension
+    <br />
+    Boyut:  @Model.fileSize Byte
+    <br />
+    Yükleme Tarihi: @Model.date
+    <br />
+
+
+    <br />
+    <a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="Download" asp-action="CreateLink" asp-route-id=@Model.id>İndir</a>
+
+
+
+    <div class="container" style="align-content:center">
+
+
+
+
+        <br /><br />
+    </div>
+
+
+</div>
+

@@ -1,0 +1,48 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+      <section class="banner-area relative about-banner" id="home" style="height:300px">
+          <div class="overlay overlay-bg"></div>
+          <div class="container">
+              <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+                  <div class="about-content col-lg-12">
+                      <h1 class="text-white">
+                          Giriş Yap
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+            <div class="container" style="padding:2%;text-align:center">
+
+                <div class="text-danger" asp-validation-summary="All"></div>
+               <br />
+                <h3>Servislere erişebilmek için giriş yapmanız gerekmektedir.</h3>
+                <br />
+                <h5> Hesap oluşturmak için <a asp-action="Register" asp-controller="Account"> kaydolun.</a></h5>
+                <br />
+
+
+
+    <form asp-action="Login" method="post">
+
+        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+        <div class="form-group">
+            <label> Kullanıcı Adı</label>
+            <input style="text-align:center" asp-for="UserName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Şifre</label>
+            <input style="text-align:center" asp-for="Password" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Giriş Yap</button>
+    </form>
+
+    
+</div>

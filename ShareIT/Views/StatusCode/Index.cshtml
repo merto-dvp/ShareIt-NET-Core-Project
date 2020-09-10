@@ -1,0 +1,56 @@
+﻿@model int
+@{
+    ViewData["Title"] = "NotFound";
+}
+
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+            <div class="about-content col-lg-8">
+                <h1 class="text-white">
+                    Hata
+
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container" style="padding:5%;text-align:center">
+
+
+    @{
+        var statusCode = Model;
+        var statusmessage = "";
+        switch (statusCode)
+        {
+            case 400:
+                statusmessage = "Bad request: The request cannot be fulfilled due to bad syntax";
+                break;
+            case 403:
+                statusmessage = "Forbidden";
+                break;
+            case 404:
+                statusmessage = "Üzgünüz, aradığınız sayfa bulunamadı.";
+                break;
+            case 408:
+                statusmessage = "Sunucu isteği zaman aşımına uğradı.";
+                break;
+            case 500:
+                statusmessage = "Sunucu isteğe cevap veremedi.";
+                break;
+            default:
+                statusmessage = "That’s odd... Something we didn't expect happened";
+                break;
+        }
+    }
+    <div class="container">
+        <h1 style="color:darkblue">@Model Hatası</h1><br />
+        <h3>@statusmessage</h3>
+    </div>
+
+
+
+    <br /><br /><br /><br />
+</div>

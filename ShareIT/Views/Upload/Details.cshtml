@@ -1,0 +1,36 @@
+﻿@model ShareIT.Models.UploadedFile
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UploadedFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fileName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fileName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.userGuid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.userGuid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.extension)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.extension)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

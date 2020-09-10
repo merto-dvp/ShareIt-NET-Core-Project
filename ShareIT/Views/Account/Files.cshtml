@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ShareIT.Models.UploadedFile>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:100px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Dosyalarım
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <a asp-area="" asp-controller="Upload" class="primary-btn text-uppercase mx-auto" style="width:30%;text-align:center" asp-action="Index">Dosya Yükle</a>
+</div>
+
+@{
+    var count = @Model.Count();
+}
+<br />
+<h4 style="text-align:center;margin-bottom:-100px;">@count kayıt bulundu.</h4>
+<section class="popular-courses-area section-gap courses-page" style="">
+    <div class="container">
+
+        <div class="row col-lg-push-2" style="width:1200px;margin-left:-50px">
+
+
+
+            @foreach (var item in Model)
+            {
+
+
+                <div class="single-popular-carusel col-lg-pull-6 col-md-3">
+                    <a asp-action="DeleteFile" class="primary-btn small wh" asp-route-id="@item.id">Kaldır</a>
+                    <a asp-controller="Upload" asp-action="UploadSuccessful" class="primary-btn small wh" asp-route-id="@item.id">Link</a>
+
+
+                    <div class="thumb-wrap relative">
+                        <div class="thumb relative">
+
+
+                            <a asp-controller="Download" asp-action="Index" asp-route-id="@item.id">
+
+                                <img class="img-fluid" style="height:240px;width:320px" alt="" src="~/img/ext/@item.imgExt" onerror="this.onerror=null;this.src='/img/ext/other.png';" />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="details" style=" overflow: hidden">
+                        <a asp-controller="Download" asp-action="Index" asp-route-id="@item.id"><h4>@item.fileName@item.extension</h4></a>
+                    </div>
+
+                    <h6 style="text-align:right">@item.date</h6>
+                    <br />
+
+                </div>
+            }
+
+            <br /><br />
+
+        </div>
+        <br /><br />
+    </div>
+
+</section>
+<br />
+<br />
+<br />
+<br />

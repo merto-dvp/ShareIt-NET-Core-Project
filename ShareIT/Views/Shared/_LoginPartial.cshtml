@@ -1,0 +1,47 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+<form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+
+
+
+    <a style="" asp-controller="Account" asp-action="Details" title="Manage">
+
+        @UserManager.GetUserName(User)
+        
+    </a>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Index" class="genric-btn primary circle" asp-controller="Admin" style="background-color:#456;width:120px;border-color:grey;">Yönetici</a>
+    }
+
+
+
+
+    <button type="submit" class="genric-btn primary circle" style="background-color:#456;width:120px;border-color:grey;">Çıkış Yap</button>
+
+</form>
+
+
+   
+
+}
+else
+{
+
+    <li>
+        <a asp-controller="Account" asp-action="Login" class="genric-btn primary circle" style="background-color:#456;width:120px;border-color:grey;">Giriş Yap</a>
+    </li>
+
+    
+
+
+}
